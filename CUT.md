@@ -73,3 +73,38 @@ makefun-chariot-paper-tofu
 Title options:
 1. `WINDAH KAGET MAP GTA 6 GEDE BANGET 😭 BARU SATU GARIS #gta6 #gaming`
 2. `Windah Basudara GTA 6: WASTED, BIGFOOT, MAP GEDE 😹 #gta6 #windahbasudara`
+
+## v2 — intro + numbered moments (Sidik's order, 2026-11-21 22:29 WIB)
+
+Two changes, everything else identical to v1 (same 4 beats, same cuts, same
+captions, original stream audio, blurred-backdrop vertical layout, facecam
+kept, pitch card last 5 s):
+
+1. **Intro title card (0–3 s):** black card, "TOP MOMENT" (white, 110px) /
+   "WINDAH BASUDARA" (yellow, 88px) / "4 MOMEN PALING LUCU" (white, 48px),
+   Noto Sans Bold — same style as the captions. Silent.
+2. **Numbered transitions:** each beat opens with a big yellow "MOMEN N"
+   (110px, black outline + semi-transparent box) at the top of the frame for
+   the first 2.5 s of the segment, then it clears and the captions carry on:
+   MOMEN 1 map shock, MOMEN 2 WASTED, MOMEN 3 Bigfoot, MOMEN 4 seaplane.
+
+Timeline (58 s total): intro 0–3 | b1 3–15 | b2 15–29 | b3 29–41 | b4 41–53
+| pitch 53–58. No moment was trimmed — the intro fits inside the ~60 s
+budget because v1 was 55 s.
+
+Render: `render2.sh` in the work dir (same filter chain as `render.sh` plus
+the intro card and the per-beat number drawtext with
+`enable='between(t,0,2.5)'`). Output `windah-gta6-compilation-v2.mp4`:
+1080×1920, 30 fps, H.264 CRF 20 + AAC 128k, 58.0 s, ~29.1 MB. WhatsApp
+copy `windah-gta6-compilation-v2-wa.mp4`: 720×1280, CRF 28, 58.0 s, 5.5 MB
+(v1's 29 MB file did not deliver on WhatsApp).
+
+Verified by viewing frames: intro legible; "MOMEN 1–4" all visible at their
+transitions and gone after 2.5 s; captions legible; pitch card readable;
+facecam preserved in every beat. Audio per segment: beats −7.5 to −15.8 dB
+mean (original stream audio, in sync); intro/pitch silent by design.
+
+Note: the actual render is 30 fps with the blurred-backdrop layout from
+`render.sh` (the v1 "Render" section above says 60 fps / center-crop /
+end-card-over-last-frame, which does not match the script — the pitch card
+is a separate black card, and the facecam is kept via the blurred backdrop).
