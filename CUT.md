@@ -108,3 +108,65 @@ Note: the actual render is 30 fps with the blurred-backdrop layout from
 `render.sh` (the v1 "Render" section above says 60 fps / center-crop /
 end-card-over-last-frame, which does not match the script — the pitch card
 is a separate black card, and the facecam is kept via the blurred backdrop).
+
+## v3 — Bigfoot re-cut: the faint lands on Bigfoot (Sidik's order, 2026-11-21 22:37 WIB)
+
+Sidik: "Pas bagian di rodok Bigfoot nya harus pas Bigfoot nya muncul pas dia
+pingsan" — the Bigfoot beat must show Bigfoot appearing exactly when Windah
+faints. Only moment 3 changed; intro, moments 1/2/4, captions, pitch card
+and the 58 s total are identical to v2.
+
+**What the source actually shows (frame-by-frame check, Gameplay #3
+`B2Bon2X1jPQ`):** v1's "he faints at 01:04:37" was wrong — at 01:04:37.8
+Windah is already awake, saying "What happen, man? Gua pingsan tadi
+lihat-lihat totem ritual" (I fainted while looking at the ritual totem).
+The real sequence, confirmed by viewing frames every 0.5 s and by the
+captions:
+
+- 01:03:06 "Guys, itu apa, Guys? Depan muka kita" — he spots something, but
+  no creature is clearly visible in the frame at 01:03:05–01:03:08 (zoomed
+  crops checked); he chases it through the swamp ("Dia ke sana, dia ke
+  sana", 01:03:12; "What? Big food", 01:03:18).
+- 01:03:35 he aims his gun at a tree; health bar nearly empty.
+- 01:03:51–01:03:56 close-up of the ritual totem: a moss-covered humanoid
+  figure with arms and rope bindings around its torso, L2 inspect prompt on
+  screen, in-game subtitle "The hell is this thing?" — this is the clearest
+  full-figure Bigfoot shot in the video.
+- 01:03:57 Jason stumbles beside the totem, damage vignette closing in.
+- **01:04:01.5 the game screen goes BLACK (mean brightness 4.3) — the
+  faint.** Only Windah's facecam stays visible, mouth open screaming
+  (audio RMS peaks −3.8 dB at ~01:04:02). Black lasts to 01:04:04.
+- 01:04:04.5–01:04:10.5 ground-level shot: camera on the grass, Jason's bare
+  arm in frame, and **two big dark furry legs standing over him** — Bigfoot
+  standing over the fainted Jason, Windah covering his mouth in the facecam.
+  Second blackout 01:04:11–01:04:16; he wakes up by the teal pickup at
+  01:04:16.5 and says at 01:04:49 "dirodok Bigfoot. Serius gua dirodok sama
+  dia."
+
+**New moment 3 cut: 01:03:55–01:04:07 (12 s)**, from a newly downloaded
+section `m3d_gap.mp4` (01:03:52–01:04:36, the range v1 never downloaded).
+Inside the 12 s: totem close-up (Bigfoot full figure, 0–2 s) → Jason
+stumbles (2–6 s) → screen goes BLACK, the faint, Windah screaming (6.5–9 s)
+→ ground-level shot, Bigfoot's furry legs standing over the downed Jason
+(9.5–12 s). So Bigfoot appears at the open of the beat AND stands over him
+at the exact moment he is down — the appearance and the faint are in the
+same beat, back to back. Honest limit: the ground-level shot shows Bigfoot's
+legs/feet only, not a full body — the full figure is the totem close-up at
+the start of the beat.
+
+Render: `render3.sh` in the work dir (byte-identical to `render2.sh`
+except: input 2 is `m3d_gap.mp4`, trim 3–15, output
+`windah-gta6-compilation-v3.mp4`). Output: 1080×1920, 30 fps, H.264 CRF 20
++ AAC 128k, 58.0 s, 20,255,043 bytes (~20.3 MB — smaller than v2 because
+the black faint section compresses hard). WhatsApp copy
+`windah-gta6-compilation-v3-wa.mp4`: 720×1280, CRF 28, 58.0 s, 4,349,192
+bytes (~4.3 MB).
+
+Verified by viewing rendered frames: @30.0 s MOMEN 3 + DIRODOK BIGFOOT over
+the totem close-up (Bigfoot centre-frame, facecam shocked); @36.0 s black
+screen, caption still on, Windah's facecam screaming (the faint); @39.5 s
+ground-level, Bigfoot's furry leg in the grass over Jason's arm, Windah
+reacting. Intro @1.5 s, MOMEN 1 @4.0 s, MOMEN 2 @16.0 s, MOMEN 4 @42.0 s
+and pitch @55.0 s all unchanged from v2. Audio: moment 3 mean −16.9 dB,
+max 0.0 dB; faint window (35–38 s) mean −16.2 dB, max −4.5 dB — the scream
+survives the render.
